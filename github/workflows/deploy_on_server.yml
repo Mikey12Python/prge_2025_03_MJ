@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - qa
+      - main
 
 permissions:
   contest: read
@@ -36,5 +37,5 @@ jobs:
           POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
           POSTGRES_PORT: ${{ secrets.POSTGRES_PORT }}
 
-        run: docker-compose -f ./docker-compose/docker-compose-prge-remote.yml -p remote-prge_2025_03_mj up --build -d
+        run: docker-compose -f ./docker-compose/docker-compose-prge-remote.yml -p remote-prge_2025_03_mj-${{ github.ref_name }} up --build -d
 

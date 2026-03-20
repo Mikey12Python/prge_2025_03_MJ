@@ -26,6 +26,9 @@ services:
       dockerfile: /docker/geoserver/Dockerfile
     image: 'prge_2025_03_mj_geoserver'
     container_name: 'prge_2025_03_mj_geoserver'
+    environment:
+      GEOSERVER_DATA_DIR: /opt/geoserver_data
+      SKIP_DEMO_DATA: "true"
     ports:
       - 9000:8080
 volumes:

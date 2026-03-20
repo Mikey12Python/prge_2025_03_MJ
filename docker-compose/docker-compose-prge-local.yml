@@ -7,7 +7,7 @@ services:
   postgis:
     build:
       context: ..
-      dockerfile: docker/postgis/Dockerfile
+      dockerfile: /docker/postgis/Dockerfile
     image: 'prge_2025_03_mj_postgis'
     container_name: 'prge_2025_03_mj_postgis'
     environment:

@@ -7,7 +7,7 @@ on:
       - main
 
 permissions:
-  contest: read
+  contents: read
   packages: write
 
 jobs:

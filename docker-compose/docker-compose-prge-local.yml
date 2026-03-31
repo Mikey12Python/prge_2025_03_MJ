@@ -1,4 +1,4 @@
-x-environment :
+x-environment:
   - &env-postgres-db POSTGRES_DB=${POSTGRES_DB}
   - &env-postgres-user POSTGRES_USER=${POSTGRES_USER}
   - &env-postgres-password POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
@@ -7,9 +7,9 @@ services:
   postgis:
     build:
       context: ..
-      dockerfile: /docker/postgis/Dockerfile
-    image: 'prge_2025_03_mj_postgis'
-    container_name: 'prge_2025_03_mj_postgis'
+      dockerfile: docker/postgis/Dockerfile
+    image: 'prge_2025_03_mw_postgis'
+    container_name: 'prge_2025_03_mw_postgis'
     environment:
       - *env-postgres-db
       - *env-postgres-user
@@ -19,13 +19,12 @@ services:
     volumes:
       - postgis-prge-local:/var/lib/postgresql/data
 
-
   geoserver:
     build:
       context: ..
-      dockerfile: /docker/geoserver/Dockerfile
-    image: 'prge_2025_03_mj_geoserver'
-    container_name: 'prge_2025_03_mj_geoserver'
+      dockerfile: docker/geoserver/Dockerfile
+    image: 'prge_2025_03_mw_geoserver'
+    container_name: 'prge_2025_03_mw_geoserver'
     environment:
       GEOSERVER_DATA_DIR: /opt/geoserver_data
       SKIP_DEMO_DATA: "true"

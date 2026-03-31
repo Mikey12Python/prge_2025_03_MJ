@@ -34,3 +34,4 @@ services:
       - geoserver-data:/opt/geoserver_data
 volumes:
   postgis-prge-data:
+  geoserver-data:

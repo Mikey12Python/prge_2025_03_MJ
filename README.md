@@ -4,7 +4,7 @@
 
 
 '''bash
-docker-compose -f ./docker-compose/docker-compose-prge-remote.yml --env-file .env -p local-prge_2025_03_mj up --build -d
+docker-compose -f ./docker-compose/docker-compose-prge-remote.yml --env-file .env -p remote-prge_2025_03_mj up --build -d
 
 '''
 

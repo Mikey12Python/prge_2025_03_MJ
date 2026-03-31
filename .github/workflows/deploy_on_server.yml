@@ -10,12 +10,12 @@ permissions:
   contents: read
   packages: write
 
+
 jobs:
   build-and-deploy:
-    name: build & push
+    name: Build & push
     runs-on:
       - self-hosted
-
 
     environment: ${{ github.ref_name }}
 
@@ -25,7 +25,7 @@ jobs:
       - name: Wyświetl napis
         run: echo 'HELLOO'
 
-      - name: Building and setting up docker-compose
+      - name: building and setting up docker-compose
 
         env:
           ENV_NAME: ${{ github.ref_name }}
@@ -36,8 +36,8 @@ jobs:
           #Geoserver
           POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
           POSTGRES_PORT: ${{ secrets.POSTGRES_PORT }}
-          GEOSERVER_PORT: ${{ secrets.GEOSERVER_PORT }}
+          GEOSERVER_PORT: ${{ secrets.GEOSERVER_PORT}}
 
-        run: docker-compose -f ./docker-compose/docker-compose-prge-remote.yml -p remote-prge_2025_03_mj-${{ github.ref_name }} up --build -d
-
-
+        run:
+          docker-compose -f ./docker-compose/docker-compose-prge-remote.yml -p remote-prge_2025_03_mw-${{ github.ref_name }} up --build -d
+          #TODO do sprawdzenia jak to się robiło żeby tutaj była dynamicznie robiona nazwa

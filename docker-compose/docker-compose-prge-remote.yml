@@ -9,7 +9,7 @@ services:
       context: ..
       dockerfile: /docker/postgis/Dockerfile
     image: 'prge_2025_03_mj_postgis'
-    container_name: 'prge-2025-03-MJ-postgis-${ENV_NAME}'
+    container_name: prge-2025-03-MJ-postgis-${ENV_NAME}
     environment:
       - *env-postgres-db
       - *env-postgres-user
@@ -24,7 +24,7 @@ services:
       context: ..
       dockerfile: /docker/geoserver/Dockerfile
     image: 'prge_2025_03_mj_geoserver'
-    container_name: 'prge_2025_03_mj_geoserver'
+    container_name: prge-2025-03-mj-geoserver-${ENV_NAME}
     environment:
       GEOSERVER_DATA_DIR: /opt/geoserver_data
       SKIP_DEMO_DATA: "true"
